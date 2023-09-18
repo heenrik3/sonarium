@@ -1,0 +1,62 @@
+.fp
+    height: inherit
+    width: 100%
+    bottom: 0
+    position: absolute
+
+    display: flex
+
+    &__container
+        height: 100%
+        width: 100%
+        margin: 2rem
+        padding: 1rem
+        border-radius: 5rem
+
+        @include glass
+
+        @include animate(fade-in-from-bottom)
+
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex: 1
+        gap: 2rem
+    
+        overflow: hidden
+
+        // @include responsive
+        
+    &__picture
+        height: 5rem
+        width: 5rem
+        border-radius: 2.5rem
+        overflow: hidden
+
+    &__img
+        height: 100%
+        width: 100%
+        object-fit: cover
+
+    &__display
+        width: 100%
+        flex: 1
+
+        display: grid
+        pointer-events: none
+
+    &__scrollable
+        @include scroll(horizontal)
+
+    &__title
+        width: max-content
+        font-weight: bold
+    
+    &__artist
+        width: max-content
+ 
+    &__controls
+        margin-right: 1rem
+        font-size: 2.5rem
+        display: flex
+        gap: 1.5rem

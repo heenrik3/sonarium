@@ -1,0 +1,47 @@
+.playlist
+    height: 100%
+    width: 100%
+    border-radius: 2rem
+
+    display: grid
+    grid-template-rows: auto 1fr
+    gap: 1rem
+    flex: 1
+    @include glass
+    overflow: hidden
+
+    @include animate(fade-in-from-top-right)
+
+    &__header
+        margin: 2rem 2rem 0 2rem
+        display: flex
+        justify-content: space-between
+
+    &__close
+        font-size: 2.5rem
+
+    &__scroll
+        @include scroll(vertical)
+
+    &__list
+        padding: 0 0 2rem 0
+        display: flex
+        flex-direction: column      
+
+    &__item
+        // border-top: 1px solid rgba($black, .2)
+        // border-bottom: 1px solid rgba($black, .2)
+
+        padding: 1rem 2rem 1rem 2rem
+        // background-color: $white
+        font-weight: bold
+
+        display: flex
+        align-items: center
+        gap: 2rem
+
+        &:hover
+            background-color: rgba($black, .03)
+
+    &__action
+        font-size: 2.5rem

@@ -1,0 +1,66 @@
+.tabs
+    margin-bottom: 1rem
+    
+    display: flex
+    flex-direction: column
+
+    border-top-left-radius: 1rem
+    border-top-right-radius: 1rem
+
+    &--light
+        background-color: darken($white, 2%)
+
+    &--dark
+        background-color: lighten($black, 10%)
+
+    &__nav
+        overflow: hidden
+        display: flex
+        justify-content: space-between
+
+    .tab
+        padding: .5rem
+
+        display: flex
+        align-items: center
+        justify-content: center
+        flex: 1
+        font-weight: bold
+
+        color: lighten($black, 40%)
+        font-size: 2rem
+
+        &, & > span
+            transition: .5s
+
+        &--active
+            & > span
+                    background: $gradient
+                    -webkit-background-clip: text
+                    -webkit-text-fill-color: transparent 
+    &__indicator
+        // height: 5px
+        // width: 100%
+        position: relative
+
+    .line
+        height: 5px
+        left: 0
+        // background-color: $black
+
+        background: $gradient
+        position: absolute
+
+        transition: .3s ease-in-out
+
+    &__content
+        height: inherit
+        border-radius: 1rem
+        @include scroll(vertical)
+
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        & > :first-child
+            padding-bottom: 10rem

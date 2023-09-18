@@ -1,0 +1,30 @@
+.lyrics
+    height: 100%
+    padding: 2rem
+    border-radius: 2rem
+
+    display: grid
+    grid-template-rows: auto 1fr
+    gap: 1rem
+    overflow: hidden
+
+    @include glass
+    @include animate(fade-in-from-bottom)
+    
+    &__header
+        display: flex
+        justify-content: space-between
+        gap: 2rem
+
+    &__close
+        font-size: 2.5rem
+
+    &__scroll
+        @include scroll(vertical)
+    
+    &__text
+        font-size: 2rem
+        white-space: pre-wrap
+        display: flex
+        justify-content: center
+        text-align: center

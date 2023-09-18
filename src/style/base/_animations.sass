@@ -1,0 +1,53 @@
+@keyframes fade-in
+	0% 
+		opacity: 0
+		transform: scale(.9)
+	
+	100% 
+		opacity: 1
+		transform: scale(1)
+	
+@keyframes rotation
+	0%
+		transform: rotate(0deg)
+	
+	100%
+		transform: rotate(360deg)
+
+@keyframes slide-in-right 
+	0% 
+		-webkit-transform: translateX(5rem)
+		transform: translateX(5rem)
+		opacity: 0
+	
+	100% 
+		-webkit-transform: translateX(0)
+		transform: translateX(0)
+		opacity: 1
+
+@keyframes fade-in-from-top-right
+	0%
+		opacity: 0
+		transform: translateX(50%) translateY(-50%) scale(0)
+
+	50%
+		opacity: 1
+		transform: translateX(-2%) translateY(2%) scale(1)
+
+	100%
+		transform: translateX(0) translateY(0)
+
+@keyframes fade-in-from-bottom
+	0%
+		opacity: 0
+		transform: translateY(50%) scale(0.5)
+
+	50%
+		opacity: 1
+		transform: translateY(-2%) scale(1)
+
+	100%
+		transform: translateY(0)
+
+.rotate
+	animation: rotation 15s linear infinite

@@ -1,0 +1,68 @@
+@mixin colored-text
+    background: $gradient
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+    
+@mixin shadow
+    // box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+    
+@mixin glass
+    background-color: rgba(255, 255, 255, 0.2)
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1)
+    backdrop-filter: blur(45px)
+    -webkit-backdrop-filter: blur(45px)
+
+@mixin animate($type)
+    animation: $type .6s ease 0s 1 normal forwards
+    @content
+    
+
+@mixin scroll($to)
+
+    scroll-behavior: smooth
+    -ms-overflow-style: none
+    scrollbar-width: none
+
+    &::-webkit-scrollbar
+        display: none
+
+    @if ($to == vertical)
+        overflow-y: scroll
+        @content
+    
+    @else
+        overflow-x: scroll
+        @content
+    
+@mixin respond($breakpoint)
+    @if $breakpoint == phone
+        @media only screen and (max-width: 37.5em)
+          @content    //600px
+
+    @if $breakpoint == tab-port
+        @media only screen and (max-width: 56.25em)
+          @content     //900px
+
+    @if $breakpoint == tab-land
+        @media only screen and (max-width: 75em)
+          @content    //1200px
+
+    @if $breakpoint == big-desktop
+        @media only screen and (min-width: 112.5em)
+          @content    //1800
+
+
+@mixin responsive
+
+    // @include respond(big-desktop)    
+    //     margin: 0 30rem
+    @include respond(tab-land)    
+        margin: 0 15rem
+    @include respond(tab-port)
+        margin: 0 5rem
+    @include respond(phone)
+        margin: 0
+
+    
+    // @include respond(big-desktop)
+    //     margin: 0 60rem    

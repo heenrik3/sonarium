@@ -1,0 +1,72 @@
+*, *:before, *:after
+    padding: 0
+    margin: 0
+    box-sizing: inherit
+
+html
+    font-size: 62.5%
+
+body
+    box-sizing: border-box
+
+a
+    display: flex
+    align-items: center
+    justify-content: center
+
+a, button
+    height: 100%
+    width: 100%
+    text-decoration: none
+    color: inherit
+    cursor: pointer
+
+    &:active
+        -webkit-tap-highlight-color: transparent
+
+input, button, textarea
+    width: 100%
+    outline: none
+    border: 0px solid transparent
+    background-color: transparent
+
+    font-family: inherit
+    font-weight: inherit
+    font-size: inherit
+
+ul
+    list-style: none
+   
+.app
+    display: flex
+    flex-direction: column
+
+    &::selection
+        background-color: red
+
+    &__container
+        margin: 0rem 40rem
+        display: flex
+        flex-direction: column
+        transition: .5s
+
+        position: relative
+        @include shadow
+        @include responsive
+
+    &--light
+        background-color: $white
+        // background-color: #fafafa
+        // background: linear-gradient(to bottom, #fffbff 0%, white 100%)
+        // background: linear-gradient(180deg, #FFF1F1 0%, #D8D4AD 52.08%, #ADDDD7 100%)
+        // background: $gradient
+
+    &--dark
+        background-color: $black
+        // background: linear-gradient(to bottom, #1f1b1c 0%, black 100%)
+
+.disabled
+    opacity: .3
+
+    & button
+        cursor: not-allowed
